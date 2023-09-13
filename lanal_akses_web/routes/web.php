@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PersonilController;
+use App\Http\Controllers\PegawaiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,3 +26,15 @@ Route::get('/admin', function () {
 });
 
 Route::get('/admin/personil', [PersonilController::class, 'index']);
+
+//pegawai pns
+Route::get('/admin/pegawai', [PegawaiController::class, 'index'])->name('pegawai.index');
+Route::get('/admin/pegawai/create', [PegawaiController::class, 'create'])->name('pegawai.create');
+Route::post('/admin/pegawai', [PegawaiController::class, 'store'])->name('pegawai.store');
+Route::get('/admin/pegawai/{id}', [PegawaiController::class, 'show'])->name('pegawai.show');
+Route::get('/admin/pegawai/{id}/edit', [PegawaiController::class, 'edit'])->name('pegawai.edit');
+Route::put('/admin/pegawai/{id}', [PegawaiController::class, 'update'])->name('pegawai.update');
+Route::delete('/admin/pegawai/{id}', [PegawaiController::class, 'destroy'])->name('pegawai.destroy');
+
+
+

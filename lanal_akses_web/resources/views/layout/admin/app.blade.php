@@ -17,6 +17,21 @@
   </head>
   <body>
 
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="toast-container" class="toast-container">
+            @if(session('success'))
+            <div class="toast bg-success text-white" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+                <div class="toast-header">
+                    <strong class="me-auto">Success</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    {{ session('success') }}
+                </div>
+            </div>
+            @endif
+        </div>
+    </div>
     
     @extends('layout.admin.sidebar')
     
@@ -28,7 +43,16 @@
 
 
     <!-- Optional JavaScript -->
-    
+      <script>
+        // Inisialisasi Bootstrap Toasts
+        var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+        var toastList = toastElList.map(function (toastEl) {
+            return new bootstrap.Toast(toastEl)
+        });
+        toastList.forEach(function (toast) {
+            toast.show();
+        });
+    </script>
     <!-- Icon -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
