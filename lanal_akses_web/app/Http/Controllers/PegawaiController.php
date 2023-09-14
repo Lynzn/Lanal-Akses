@@ -10,7 +10,7 @@ class PegawaiController extends Controller
     // Menampilkan daftar semua pegawai
     public function index()
     {
-        $pegawai = PegawaiModel::all();
+        $pegawai = PegawaiModel::paginate(10);
         return view('admin.pegawai.index', compact('pegawai'));
     }
 

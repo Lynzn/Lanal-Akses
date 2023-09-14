@@ -10,7 +10,7 @@ class AdminsController extends Controller
 {
     public function index()
     {
-        $admins = AdminsModel::all();
+        $admins = AdminsModel::paginate(10);
         return view('admin.tambahuser.index', compact('admins'));
     }
 
