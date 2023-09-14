@@ -64,7 +64,7 @@ class PegawaiController extends Controller
         $pegawai->update($request->all());
 
         return redirect()->route('pegawai.index')
-            ->with('success', 'Pegawai berhasil diperbarui.');
+            ->with('success', 'Data Pegawai berhasil diperbarui.');
     }
 
     // Menghapus pegawai dari database
@@ -74,6 +74,6 @@ class PegawaiController extends Controller
         $pegawai->delete();
 
         return redirect()->route('pegawai.index')
-            ->with('success', 'Pegawai berhasil dihapus.');
+            ->with('success', 'Data Pegawai berhasil dihapus.');
     }
 }
