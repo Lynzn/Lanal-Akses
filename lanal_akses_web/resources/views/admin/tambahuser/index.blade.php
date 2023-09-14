@@ -43,7 +43,7 @@
                                         <td>{{ '******' }}</td>
                                         <td>{{ $admin->role }}</td>
                                         <td>
-                                            <a href="{{ route('tambahuser.edit', $admin->id) }}" class="btn btn-warning">Edit</a>
+                                            <a href="{{ route('tambahuser.edit', $admin->id) }}" class="btn btn-primary">Edit</a>
                                             <form action="{{ route('tambahuser.destroy', $admin->id) }}" method="POST" class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
