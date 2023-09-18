@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminsController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\PersonilController;
 use App\Http\Controllers\PegawaiController;
 use Illuminate\Support\Facades\Route;
@@ -38,12 +39,12 @@ Route::put('/admin/pegawai/{id}', [PegawaiController::class, 'update'])->name('p
 Route::delete('/admin/pegawai/{id}', [PegawaiController::class, 'destroy'])->name('pegawai.destroy');
 
 //data admins
-Route::get('/admin/tambahuser', [AdminsController::class, 'index'])->name('tambahuser.index');
-Route::get('/admin/tambahuser/create', [AdminsController::class, 'create'])->name('tambahuser.create');
-Route::post('/admin/tambahuser', [AdminsController::class, 'store'])->name('tambahuser.store');
-Route::get('/admin/tambahuser/{id}', [AdminsController::class, 'show'])->name('tambahuser.show');
-Route::get('/admin/tambahuser/{id}/edit', [AdminsController::class, 'edit'])->name('tambahuser.edit');
-Route::put('/admin/tambahuser/{id}', [AdminsController::class, 'update'])->name('tambahuser.update');
-Route::delete('/admin/tambahuser/{id}', [AdminsController::class, 'destroy'])->name('tambahuser.destroy');
+Route::get('/admin/users', [UserController::class, 'index'])->name('users.index');
+Route::get('/admin/users/create', [UserController::class, 'create'])->name('users.create');
+Route::post('/admin/users', [UserController::class, 'store'])->name('users.store');
+Route::get('/admin/users/{id}', [UserController::class, 'show'])->name('users.show');
+Route::get('/admin/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+Route::put('/admin/users/{id}', [UserController::class, 'update'])->name('users.update');
+Route::delete('/admin/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 
 

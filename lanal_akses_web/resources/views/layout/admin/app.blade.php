@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="{{ URL::asset('css/app.css'); }} ">
     <link rel="stylesheet" href="{{ URL::asset('css/admin/admin.style.css'); }} ">
     <link rel="stylesheet" href="{{ URL::asset('css/admin/admin.sidebar.css'); }} ">
@@ -16,23 +17,12 @@
     <title> @yield('title-page') </title>
   </head>
   <body>
-
-    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-        <div id="toast-container" class="toast-container">
-            @if(session('success'))
-            <div class="toast bg-success text-white" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
-                <div class="toast-header">
-                    <strong class="me-auto">Success</strong>
-                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
-                <div class="toast-body">
-                    {{ session('success') }}
-                </div>
-            </div>
-            @endif
-        </div>
+    <!-- Notifikasi Popup -->
+  <!-- Di dalam elemen notifikasi -->
+    <div id="notification-popup" class="notification-popup">
+        <span id="notification-message"></span>
     </div>
-    
+
     @extends('layout.admin.sidebar')
     
     <main class="content-margin content-wrap">
@@ -43,16 +33,70 @@
 
 
     <!-- Optional JavaScript -->
+      <!-- Membuat tampilan icon mata untuk kolom password JavaScript -->
       <script>
-        // Inisialisasi Bootstrap Toasts
-        var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-        var toastList = toastElList.map(function (toastEl) {
-            return new bootstrap.Toast(toastEl)
-        });
-        toastList.forEach(function (toast) {
-            toast.show();
-        });
-    </script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const passwordInput = document.getElementById('password');
+          const eyeIcon = document.getElementById('eye-icon');
+          const showPassword = document.getElementById('show-password');
+
+          const passwordConfirmationInput = document.getElementById('password_confirmation');
+          const eyeIconConfirmation = document.getElementById('eye-icon-confirmation');
+          const showPasswordConfirmation = document.getElementById('show-password-confirmation');
+
+          showPassword.addEventListener('click', function () {
+              if (passwordInput.type === 'password') {
+                  passwordInput.type = 'text';
+                  eyeIcon.classList.remove('fa-eye');
+                  eyeIcon.classList.add('fa-eye-slash');
+              } else {
+                  passwordInput.type = 'password';
+                  eyeIcon.classList.remove('fa-eye-slash');
+                  eyeIcon.classList.add('fa-eye');
+              }
+          });
+
+          showPasswordConfirmation.addEventListener('click', function () {
+              if (passwordConfirmationInput.type === 'password') {
+                  passwordConfirmationInput.type = 'text';
+                  eyeIconConfirmation.classList.remove('fa-eye');
+                  eyeIconConfirmation.classList.add('fa-eye-slash');
+              } else {
+                  passwordConfirmationInput.type = 'password';
+                  eyeIconConfirmation.classList.remove('fa-eye-slash');
+                  eyeIconConfirmation.classList.add('fa-eye');
+              }
+          });
+      });
+      </script>
+      
+       <!-- Membuat tampilan notif pop up JavaScript -->
+       <script>
+          document.addEventListener('DOMContentLoaded', function() {
+              var notificationPopup = document.getElementById('notification-popup');
+              var notificationMessage = document.getElementById('notification-message');
+              var notificationIcon = document.getElementById('notification-icon');
+              // Cek apakah ada pesan notifikasi dalam session
+              var successMessage = "{{ session('success') }}";
+              var errorMessage = "{{ session('error') }}"; // Tambahkan variabel errorMessage
+              if (successMessage) {
+                  // Tampilkan notifikasi dengan latar belakang warna hijau
+                  notificationMessage.innerHTML = successMessage;
+                  notificationPopup.style.backgroundColor = '#4CAF50'; // Warna hijau
+              } else if (errorMessage) {
+                  // Tampilkan notifikasi dengan latar belakang warna merah
+                  notificationMessage.innerHTML = errorMessage;
+                  notificationPopup.style.backgroundColor = '#FF5733'; // Warna merah
+              }
+              notificationPopup.style.color = '#fff'; // Tambahkan warna teks putih
+              notificationPopup.style.display = 'block';
+              setTimeout(function() {
+                  notificationPopup.style.display = 'none';
+              }, 5000); // Notifikasi akan hilang setelah 5 detik
+          });
+      </script>
+
+
     <!-- Icon -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

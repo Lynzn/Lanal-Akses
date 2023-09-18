@@ -10,10 +10,27 @@
                 <div class="card-header">Detail Pegawai PNS</div>
 
                 <div class="card-body">
-                    <h4>NIP: {{ $pegawai->nip }}</h4>
-                    <h4>Nama Pegawai: {{ $pegawai->nama_pegawai }}</h4>
-                    <h4>Jabatan: {{ $pegawai->jabatan }}</h4>
-                    <h4>Golongan: {{ $pegawai->golongan }}</h4>
+                    <div class="profile">
+                        <div class="profile-image">
+                            <!-- Tambahkan gambar profil pegawai jika ada -->
+                            <!-- <img src="{{ asset('path-to-profile-image.jpg') }}" alt="Profile Image"> -->
+                        </div>
+                        <div class="profile-info">
+                            <h2 class="profile-name">{{ $pegawai->nama_pegawai }}</h2>
+                            <div class="profile-details">
+                                <div class="detail-item">
+                                    <strong>NIP:</strong> {{ $pegawai->nip }}
+                                </div>
+                                <div class="detail-item">
+                                    <strong>Jabatan:</strong> {{ $pegawai->jabatan }}
+                                </div>
+                                <div class="detail-item">
+                                    <strong>Golongan:</strong> {{ $pegawai->golongan }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
                     <a href="{{ route('pegawai.index') }}" class="btn btn-primary">Kembali</a>
                 </div>
             </div>

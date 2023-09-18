@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PegawaiModel;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class PegawaiController extends Controller
 {
@@ -24,10 +25,10 @@ class PegawaiController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nip' => 'required',
-            'nama_pegawai' => 'required',
-            'jabatan' => 'required',
-            'golongan' => 'required',
+            'nip' => 'required|integer|unique:pegawai,nip',
+            'nama_pegawai' => 'required|string',
+            'jabatan' => 'required|string',
+            'golongan' => 'required|string',
         ]);
 
         PegawaiModel::create($request->all());
@@ -54,10 +55,9 @@ class PegawaiController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nip' => 'required',
-            'nama_pegawai' => 'required',
-            'jabatan' => 'required',
-            'golongan' => 'required',
+            'nama_pegawai' => 'required|string',
+            'jabatan' => 'required|string',
+            'golongan' => 'required|string',
         ]);
 
         $pegawai = PegawaiModel::find($id);
@@ -74,6 +74,6 @@ class PegawaiController extends Controller
         $pegawai->delete();
 
         return redirect()->route('pegawai.index')
-            ->with('success', 'Data Pegawai berhasil dihapus.');
+            ->with('error', 'Data Pegawai berhasil dihapus.');
     }
 }

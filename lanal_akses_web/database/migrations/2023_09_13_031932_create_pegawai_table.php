@@ -15,7 +15,7 @@ class CreatePegawaiTable extends Migration
     {
         Schema::create('pegawai', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('nip');
+            $table->bigInteger('nip')->unique(); // Menambahkan konstrain unik pada kolom 'nip'
             $table->string('nama_pegawai');
             $table->string('jabatan');
             $table->string('golongan');

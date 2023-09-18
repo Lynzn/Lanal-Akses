@@ -3,12 +3,10 @@
 @section('title-page', 'Admin | Data PNS')
 
 @section('content')
-
-@section('content')
     <!-- Main content -->
     <section class="content">
         <div class="container">
-         <h1>Data Pegawai Negeri Sipil</h1>
+            <h1>Data Pegawai Negeri Sipil</h1>
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -28,15 +26,15 @@
                             @endif
 
                             <div class="table-responsive custom-table">
-                                <table  class="table table-bordered table-hover">
-                                    <thead thead class="table-blue" style="background-color: #0D21A1;">
+                                <table class="table table-bordered table-hover">
+                                    <thead class="table-blue" style="background-color: #0D21A1; color: #ffffff;">
                                         <tr>
-                                            <th style="color: #ffffff;">ID</th>
-                                            <th style="color: #ffffff;">NIP</th>
-                                            <th style="color: #ffffff;">Nama Pegawai</th>
-                                            <th style="color: #ffffff;">Jabatan</th>
-                                            <th style="color: #ffffff;">Golongan</th>
-                                            <th style="color: #ffffff;">Aksi</th>
+                                            <th>ID</th>
+                                            <th>NIP</th>
+                                            <th>Nama Pegawai</th>
+                                            <th>Jabatan</th>
+                                            <th>Golongan</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -62,21 +60,22 @@
                                 </table>
                             </div>
                         </div>
+                    
                         <!-- /.card-body -->
                         <div class="d-flex justify-content-center mt-6 ">
-                        <ul class="pagination">
-                            @if ($pegawai->onFirstPage())
-                                <li class="page-item disabled"><span class="page-link">Previous</span></li>
-                            @else
-                                <li class="page-item"><a class="page-link" href="{{ $pegawai->previousPageUrl() }}">Previous</a></li>
-                            @endif
+                            <ul class="pagination">
+                                @if ($pegawai->onFirstPage())
+                                    <li class="page-item disabled"><span class="page-link">Previous</span></li>
+                                @else
+                                    <li class="page-item"><a class="page-link" href="{{ $pegawai->previousPageUrl() }}">Previous</a></li>
+                                @endif
 
-                            @if ($pegawai->hasMorePages())
-                                <li class="page-item"><a class="page-link" href="{{ $pegawai->nextPageUrl() }}">Next</a></li>
-                            @else
-                                <li class="page-item disabled"><span class="page-link">Next</span></li>
-                            @endif
-                        </ul>
+                                @if ($pegawai->hasMorePages())
+                                    <li class="page-item"><a class="page-link" href="{{ $pegawai->nextPageUrl() }}">Next</a></li>
+                                @else
+                                    <li class="page-item disabled"><span class="page-link">Next</span></li>
+                                @endif
+                            </ul>
                         </div>
                     </div>
                     <!-- /.card -->
@@ -90,6 +89,7 @@
 @endsection
 
 @section('script')
+    @parent
     <script type="text/javascript">
         $("#pegawai").addClass("active");
     </script>

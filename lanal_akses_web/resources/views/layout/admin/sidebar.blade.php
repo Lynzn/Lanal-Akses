@@ -22,8 +22,8 @@
             <iconify-icon class="mr-3" icon="mdi:{{ (request()->is('admin/absensi')) ? 'clock' : 'clock-outline' }}" width="24"></iconify-icon>
             <span class="sidebar-text">Data Absensi</span>   
         </a>
-        <a class="p-3 sidebar-item text-uppercase text-white rounded {{ (request()->is('admin/tambahuser')) ? 'active-sidebar-item' : '' }}" href="{{  url('/admin/tambahuser') }}">
-            <iconify-icon class="mr-3" icon="ic:{{ (request()->is('admin/tambahuser')) ? 'baseline-person-add' : 'baseline-person-add-alt' }}" width="24"></iconify-icon>
+        <a class="p-3 sidebar-item text-uppercase text-white rounded {{ (request()->is('admin/users')) ? 'active-sidebar-item' : '' }}" href="{{  url('/admin/users') }}">
+            <iconify-icon class="mr-3" icon="ic:{{ (request()->is('admin/users')) ? 'baseline-person-add' : 'baseline-person-add-alt' }}" width="24"></iconify-icon>
             <span class="sidebar-text">Tambah User</span>    
         </a>
         

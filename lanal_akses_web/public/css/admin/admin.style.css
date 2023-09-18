@@ -6,7 +6,7 @@
     --blue-main: #7EBFFF;
     --blue-accent: #5786CA;
     --white: #ffffff;
-  }
+}
 
 .bg-greenmain {
     background-color: var(--green-main) !important;
@@ -32,17 +32,16 @@
     background-color: var(--blue-accent) !important;
 }
 
-
 .content-margin {
     margin-top: 5rem;
     margin-bottom: 5rem;
 }
 
-.content-wrap{
+.content-wrap {
     margin-left: 25rem;
 }
 
-.nav-image{
+.nav-image {
     width: 30px;
     height: auto;
 }
@@ -51,26 +50,30 @@ footer {
     padding-left: 3rem;
 }
 
+
 /* CSS Code for responsive tab design */
+
 @media only screen and (max-width: 765px) {
-    .nav-image{
+    .nav-image {
         width: 15px;
         height: auto;
     }
-    .nav-link{
+    .nav-link {
         width: 50px;
     }
-    .content-wrap{
+    .content-wrap {
         margin-left: 5rem;
     }
     footer {
         padding: 8rem;
     }
-  }
+}
+
 
 /* CSS Code for responsive mobile design */
+
 @media only screen and (max-width: 600px) {
-    .nav-image{
+    .nav-image {
         width: 15px;
         height: auto;
     }
@@ -81,10 +84,55 @@ footer {
         margin-top: 8rem;
         margin-bottom: 5rem;
     }
-    .content-wrap{
+    .content-wrap {
         margin-left: 0rem;
     }
     footer {
         padding-left: 5rem;
     }
-  }
+}
+
+.notification-popup {
+    display: none;
+    position: fixed;
+    top: 70px;
+    /* Sesuaikan dengan ketinggian yang diinginkan */
+    right: 20px;
+    background-color: #4CAF50;
+    /* Warna hijau default */
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.notification-popup.error-notification {
+    background-color: #FF5733;
+    /* Warna merah untuk notifikasi kesalahan */
+}
+
+.error-notification {
+    background-color: #FF5733;
+    /* Warna merah */
+    color: #fff;
+    /* Gaya lainnya seperti yang Anda inginkan */
+}
+
+.invalid-feedback {
+    color: #dc3545;
+    font-size: 0.875rem;
+}
+
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+.card-header-custom {
+    background-color: #4E6766;
+    /* Set the desired background color */
+    color: #fff;
+    /* Set the text color to white or any other suitable color */
+    font-weight: bold;
+    /* Make the text bold for better visibility */
+}

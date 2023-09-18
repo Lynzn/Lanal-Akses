@@ -12,12 +12,13 @@
                     <div class="card">
                         <div class="card-header" style="background-color: white;">
                             <h3 class="card-title">
-                                <a href="{{ route('tambahuser.create') }}" class="btn btn-primary">
+                                <a href="{{ route('users.create') }}" class="btn btn-primary">
                                     <i class="nav-icon fas fa-folder-plus"></i> Tambah User Admin
                                 </a>
                             </h3>
                         </div>
-
+                        <!-- /.card-header -->
+                        <div class="card-body">
                         @if (session('success'))
                         <div class="alert alert-success">
                             {{ session('success') }}
@@ -30,42 +31,41 @@
                                     <tr>
                                         <th style="color: #ffffff;">Nama Lengkap</th>
                                         <th style="color: #ffffff;">Username</th>
-                                        <th style="color: #ffffff;">Password</th>
                                         <th style="color: #ffffff;">Role</th>
                                         <th style="color: #ffffff;">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($admins as $admin)
+                                    @foreach ($users as $user)
                                     <tr>
-                                        <td>{{ $admin->nama_lengkap }}</td>
-                                        <td>{{ $admin->username }}</td>
-                                        <td>{{ '******' }}</td>
-                                        <td>{{ $admin->role }}</td>
+                                        <td>{{ $user->nama_lengkap }}</td>
+                                        <td>{{ $user->username }}</td>
+                                        <td>{{ $user->role }}</td>
                                         <td>
-                                            <a href="{{ route('tambahuser.edit', $admin->id) }}" class="btn btn-primary">Edit</a>
-                                            <form action="{{ route('tambahuser.destroy', $admin->id) }}" method="POST" class="d-inline">
+                                            <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary">Edit</a>
+                                            <form action="{{ route('users.destroy', $user->id) }}" method="POST" class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus admin ini?')">Hapus</button>
+                                                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus user ini?')">Hapus</button>
                                             </form>
                                         </td>
                                     </tr>
                                     @endforeach
                                 </tbody>
-                            </table>
+                                </table>
+                            </div>
                         </div>
 
                         <div class="d-flex justify-content-center mt-4">
                             <ul class="pagination pagination-custom">
-                                @if ($admins->onFirstPage())
+                                @if ($users->onFirstPage())
                                 <li class="page-item disabled"><span class="page-link">Previous</span></li>
                                 @else
-                                <li class="page-item"><a class="page-link" href="{{ $admins->previousPageUrl() }}">Previous</a></li>
+                                <li class="page-item"><a class="page-link" href="{{ $users->previousPageUrl() }}">Previous</a></li>
                                 @endif
 
-                                @if ($admins->hasMorePages())
-                                <li class="page-item"><a class="page-link" href="{{ $admins->nextPageUrl() }}">Next</a></li>
+                                @if ($users->hasMorePages())
+                                <li class="page-item"><a class="page-link" href="{{ $users->nextPageUrl() }}">Next</a></li>
                                 @else
                                 <li class="page-item disabled"><span class="page-link">Next</span></li>
                                 @endif
