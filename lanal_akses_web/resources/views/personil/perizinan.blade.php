@@ -77,7 +77,7 @@
         }
 
         .left-header {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             cursor: pointer;
         }
@@ -144,7 +144,7 @@
             margin: 20px 0;
         }
 
-        .button-container button {
+        .button-container a {
             width: 409px;
             height: 41px;
             background-color: #0D21A1; /* Warna latar belakang */
@@ -225,9 +225,9 @@
 
         <div id="selectedFiles" style="margin-top: 20px;"></div>
             <div class="button-container">
-                <button type="submit" name="hadir">
+                <a type="submit" name="hadir" class="masuk-button" href="{{ route('personil.dashboard', ['nrp'=> '26226-P']) }}">
                     Kirim  <i class="fas fa-arrow-right ml-2"></i>
-                </button>
+                </a>
             </div>
         </div>
     </div>

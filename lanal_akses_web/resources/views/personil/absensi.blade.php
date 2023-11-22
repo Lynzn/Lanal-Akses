@@ -77,7 +77,7 @@
         }
 
         .left-header {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             cursor: pointer;
         }
@@ -144,7 +144,7 @@
             margin: 20px 0;
         }
 
-        .button-container button {
+        .button-container a {
             width: 409px;
             height: 41px;
             background-color: #0D21A1; /* Warna latar belakang */
@@ -209,16 +209,13 @@
                     <input type="text" placeholder="Keterangan Jaga"> 
                 </div>
             </div>
-
             <div class="button-container">
-                <button type="submit" name="hadir">
-                     Hadir  <i class="fas fa-check ml-2"></i>
-                </button>
-                <button type="submit" name="ajukan_perizinan" class="ajukan-button" style="background-color:#5786CA ;" >
-                    <a href="{{ route('personil.perizinan') }}">
-                        Ajukan Perizinan  <i class="far fa-file ml-2"></i>
-                    </a>
-                </button>
+                <a type="submit" name="hadir" class="masuk-button" href="{{ route('personil.dashboard', ['nrp'=> '26226-P']) }}">
+                    Hadir <i class="fas fa-check ml-2"></i>
+                </a>
+                <a type="submit" name="ajukan_perizinan" class="absen-button" style="background-color: #5786CA;" href="{{ route('personil.perizinan') }}">
+                    Ajukan Perizinan <i class="far fa-file ml-2"></i>
+                </a>
             </div>
         </div>
     </div>

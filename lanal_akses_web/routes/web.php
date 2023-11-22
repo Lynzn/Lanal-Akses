@@ -36,8 +36,8 @@ Route::get('/', function () {
 
 // controller for all personil & public page 
 Route::get('/login', [PersonilPersonilController::class, 'login'])->name('personil.login');
-Route::get('/personil', [PersonilPersonilController::class, 'personilDashboard'])->name('personil.dashboard');
-Route::get('/personil/edit-profile', [PersonilPersonilController::class, 'edit'])->name('personil.edit');
+Route::get('/personil/{nrp}', [PersonilPersonilController::class, 'personilDashboard'])->name('personil.dashboard');
+Route::get('/personil/edit/{nrp}', [PersonilPersonilController::class, 'edit'])->name('personil.edit');
 Route::get('/absensi', [PersonilPersonilController::class, 'absensi'])->name('personil.absensi');
 Route::get('/perizinan', [PersonilPersonilController::class, 'perizinan'])->name('personil.perizinan');
 

@@ -21,7 +21,6 @@
     .image-profile {
         width: 127px;
         height: 127px;
-        border: 2px solid #0D21A1;
         border-radius: 100%;
         object-fit: cover;
     }
@@ -126,8 +125,7 @@
             <!-- Bagian Kiri -->
             <div class="bg-white p-4 col-12 text-center">
                 <div class="image-container">
-                    <img src="images/admin/default-profile.jpg" alt="default-profile" border="0" height="auto"
-                        class="rounded-circle image-profile">
+                    <img src="{{  URL::asset('images/admin/default-profile.jpg') }}" alt="default-profile" border="0" height="auto" class="rounded-circle image-profile">
                     <div class="edit-icon" id="edit-image-icon">
                         <i class="fas fa-edit"></i>
                     </div>
@@ -192,16 +190,17 @@
                                 <label for="status_rumah" class="col-sm-2 col-form-label">Status Rumah</label>
                                 <div class="col-sm-10">
                                     <select class="form-control" id="status_rumah">
-                                        <option value="M">Memiliki Rumah</option>
+                                        <option value="M">Sendiri</option>
                                         <option value="K">Kontrak</option>
-                                        <option value="L">Tinggal di Mes</option>
+                                        <option value="L">Numpang</option>
+                                        <option value="O">Rumdis</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <div class="col-sm-10 offset-sm-2">
-                                    <button type="button" class="btn btn-primary">Simpan Perubahan</button>
+                                    <a type="button" class="btn btn-primary" href="{{ route('personil.dashboard', ['nrp'=> '26226-P']) }}">Simpan Perubahan</a>
                                 </div>
                             </div>
                         </form>
@@ -252,7 +251,7 @@
 
                         <div class="form-group row">
                             <div class="col-sm-10 offset-sm-2">
-                                <button type="button" class="btn btn-primary">Simpan Perubahan</button>
+                                <button type="button" class="btn btn-primary" href="{{ route('personil.dashboard', ['nrp'=> '26226-P']) }}">Simpan Perubahan</button>
                             </div>
                         </div>
                     </div>

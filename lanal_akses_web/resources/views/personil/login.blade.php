@@ -248,21 +248,15 @@
 
         <div class="button-container">
             <div class="masuk-absen">
-                <button type="submit" name="masuk" class="masuk-button">
-                    <a class="text-decoration-none" href="{{ route('personil.dashboard') }}">
+                <a type="submit" name="masuk" class="masuk-button text-decoration-none" href="{{ route('personil.dashboard', ['nrp'=> '26226-P']) }}">
                         Masuk <i class="fas fa-check ml-2"></i>
-                    </a>
-                </button>
-                <button type="submit" name="absen" class="absen-button">
-                    <a href="{{ route('personil.absensi') }}">
+                </a>
+                <a type="submit" name="absen" class="absen-button" href="{{ route('personil.absensi') }}">
                         Absen <i class="fas fa-clock ml-2"></i>
-                    </a>
-                </button>
+                </a>
             </div>
-            <a href="{{ route('admin.login') }}">
-                <button type="submit" name="masuk_sebagai_admin" class="admin-button" style="background-color: #5786CA;">
+            <a type="submit" name="masuk_sebagai_admin" class="admin-button" style="background-color: #5786CA;" href="{{ route('admin.login') }}">
                     Masuk Sebagai Admin <i class="fas fa-lock ml-2"></i>
-                </button>
             </a>
         </div>
     </div>

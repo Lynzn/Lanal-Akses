@@ -96,7 +96,6 @@
                 <!-- Bagian Kiri -->
                 <div class="bg-white p-4 text-center col-12 ">
                     <img src="{{  URL::asset('images/admin/default-profile.jpg') }}" alt="default-profile" border="0" height="auto" class="rounded-circle image-profile">
-
                     <h2 class="mt-3 bluedark text-left nama">{{ $personil->nama_lengkap}}</h2>
                     <h4 class="text-left jabatan">{{ $personil->jabatan }}</h4>
                     <p class="text-left" style="color: grey; border-bottom: 2px solid #0D21A1;">{{ $personil->nrp }}</p>
