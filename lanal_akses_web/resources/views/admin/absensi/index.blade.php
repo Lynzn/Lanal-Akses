@@ -1,6 +1,6 @@
 @extends('layout.admin.app')
 
-@section('title-page', 'Admin | Data Personil')
+@section('title-page', 'Admin | Data Personel')
 
 @section('content')
     <style>
@@ -13,7 +13,7 @@
         }
     </style>
     <div class="container">
-        <h1 class="text-black my-4">Data Personil</h1>
+        <h1 class="text-black my-4">Data Personel</h1>
         <div class="container bg-white border rounded p-5 mt-4">
             <p>data absensi hari ini</p>
         </div>

@@ -1,6 +1,6 @@
 @extends('layout.personil.app')
 
-@section('title-page', 'Personil | Edit Data Personil')
+@section('title-page', 'Personel | Edit Data Personel')
 
 @section('content')
 
@@ -131,15 +131,15 @@
                     </div>
                 </div>
                 <h2 class="mt-3 bluedark text-center jabatan">Nama Jabatan</h2>
-                <h4 class="text-center nama">Nama Lengkap Personil</h4>
-                <p class="text-center" style="color: grey; border-bottom: 2px solid #0D21A1;">NRP Personil</p>
+                <h4 class="text-center nama">Nama Lengkap Personel</h4>
+                <p class="text-center" style="color: grey; border-bottom: 2px solid #0D21A1;">NRP Personel</p>
             </div>
         </div>
 
         <div class="col-md-7 mt-4 bg-white">
             <!-- Bagian Kanan -->
             <div class="bg-white p-4">
-                <h2 class="text-left" style="font-size: 36px; margin: 45px 0;">Profil Personil</h2>
+                <h2 class="text-left" style="font-size: 36px; margin: 45px 0;">Profil Personel</h2>
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="data-pribadi-tab" data-toggle="tab" href="#data-pribadi" role="tab"
