@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\PerlengkapanController;
 use App\Http\Controllers\Admin\RiwayatPenugasanController;
 use App\Http\Controllers\Admin\SanksiHukumanController;
 use App\Http\Controllers\Personil\PersonilController as PersonilPersonilController;
+use App\Models\Absensi;
 use Illuminate\Support\Facades\Route;
 
 
@@ -145,6 +146,9 @@ Route::get('/admin/personil/show/{nrp}/sanksi-hukuman/{sanksiHukumanId}/edit', [
 // Absensi
 Route::get('/admin/absensi/', [AbsensiController::class, 'index'])
 ->name('admin.absensi.index');
+Route::get('/admin/absensi/show', [AbsensiController::class, 'show'])
+->name('absensi.show');
+Route::get('/admin/absensi/{id}/edit', [AbsensiController::class, 'edit'])->name('absensi.edit');
 
 //data User Admin
 Route::get('/admin/users/{page}', [UserController::class, 'index'])
